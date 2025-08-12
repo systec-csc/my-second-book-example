@@ -1,0 +1,28 @@
+/* 
+SYS TEC electronic Corporate Design
+Cyanblau:    #0088c9
+Azurblau:    #006eb3
+Gelb-Orange: #f9b033
+Anthrazit:   #4a4a49
+*/
+
+[data-md-color-scheme="systec"] {
+    /* Normal */
+    --md-primary-fg-color: #0089c9; /*Header*/
+    --md-primary-bg-color: #FFFFFF; /*Header Font*/
+        
+    --md-default-fg-color: #4a4a49; /* Search field */
+    --md-default-fg-color--light: #006eb3; /* Skipped headlines */
+    --md-default-fg-color--lighter: #f9b033; /* Scroll bars */
+    --md-default-fg-color--lightest: #FFFFFF; /* Separator Menu */
+
+    --md-default-bg-color: #FFFFFF; /*Background*/
+    --md-default-bg-color--light: #ff00ff; /* ?? */
+    --md-default-bg-color--lighter: #00FF00; /* ?? */
+    --md-default-bg-color--lightest: #fffb00; /* ?? */
+
+    /* Accent color shades */
+    --md-accent-fg-color: #006eb3; /*Highlighted links*/
+    --md-accent-fg-color--transparent: #f9b033; /* Search Highlight */
+    --md-accent-bg-color: #FF00FF; /* ?? */
+}

@@ -1,1 +1,70 @@
-site_name: My Docs
+extra:
+  yocto-sysworxx:
+    release: '1.0.2'
+    next_release: 'v1.0.2'
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://systec-electronic.github.io/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/sys_tec_AG
+    - icon: fontawesome/brands/linkedin
+      link: https://de.linkedin.com/company/sys-tec-electronic-gmbh
+
+site_name: yocto-sysworxx
+site_url: https://systec-electronic.github.io/yocto-sysworxx
+repo_name: SYS TEC electronic AG
+repo_url: https://github.com/systec-electronic/yocto-sysworxx
+site_description: "Test description"
+site_author: SYS TEC electronic AG.
+remote_branch: gh-pages
+
+copyright: 'Copyright &copy; 2025 SYS TEC electronic'
+
+
+nav:
+  - 'Overview': index.md
+  - 'Building Yocto': build.md
+  - 'Using Peripherals': peripherals.md
+  - 'Board Information': board-information.md
+  - 'Boot media and partitioning': boot-media-partitioning.md
+  - 'Watchdog': watchdog.md
+  - 'Networking': networking.md
+  - 'Test code highlighting': test-code-highlighting.md
+
+theme:
+  name: 'material'
+  logo: 'images/logo_systec.png'
+  icon:
+    repo: fontawesome/brands/github
+  favicon: 'images/logo_systec.png'
+  palette:
+    scheme: systec
+  features:
+    - tabs
+
+extra_css:
+  - stylesheet/extra.css
+
+markdown_extensions:
+  - smarty
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.emoji
+  - pymdownx.tabbed
+  - pymdownx.snippets
+  - tables
+  - admonition
+
+plugins:
+    - search
