@@ -1,0 +1,1277 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Test description">
+      
+      
+        <meta name="author" content="SYS TEC electronic AG.">
+      
+      
+        <link rel="canonical" href="https://systec-electronic.github.io/yocto-sysworxx/peripherals/">
+      
+      
+        <link rel="prev" href="../build/">
+      
+      
+        <link rel="next" href="../board-information/">
+      
+      
+      <link rel="icon" href="../images/logo_systec.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Using Peripherals - yocto-sysworxx</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheet/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="systec" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#using-peripherals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="yocto-sysworxx" class="md-header__button md-logo" aria-label="yocto-sysworxx" data-md-component="logo">
+      
+  <img src="../images/logo_systec.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yocto-sysworxx
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Using Peripherals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/systec-electronic/yocto-sysworxx" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SYS TEC electronic AG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="yocto-sysworxx" class="md-nav__button md-logo" aria-label="yocto-sysworxx" data-md-component="logo">
+      
+  <img src="../images/logo_systec.png" alt="logo">
+
+    </a>
+    yocto-sysworxx
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/systec-electronic/yocto-sysworxx" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SYS TEC electronic AG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Building Yocto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Using Peripherals
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Peripherals
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#digital-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Outputs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-outputs-sysworxx-ctr-600" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Outputs - sysWORXX CTR-600
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-outputs-sysworxx-ctr-800" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Outputs - sysWORXX CTR-800
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sysworxx-pi-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      sysWORXX Pi Outputs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Inputs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-inputs-sysworxx-ctr-600800" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Inputs - sysWORXX CTR-600/800
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-inputs-sysworxx-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Inputs - sysWORXX Pi
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ab-encoder-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      A/B Encoder / Counter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serial-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serial interfaces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rs-232" class="md-nav__link">
+    <span class="md-ellipsis">
+      RS-232
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rs-232-with-hardware-flow-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      RS-232 with hardware flow control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rs-485-with-den-gpio-mapped-to-rts" class="md-nav__link">
+    <span class="md-ellipsis">
+      RS-485 with DEN GPIO mapped to RTS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAN Bus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sysworxx-pi-40-pin-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      sysWORXX Pi 40 Pin Header
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-tree-overlay-dtbo-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Tree Overlay (DTBO) setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device Tree Overlay (DTBO) setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dtbo-gpio-via-40-pin-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      DTBO: GPIO via 40 Pin Header
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dtbo-sysworxx-pi-hat-smart-metering" class="md-nav__link">
+    <span class="md-ellipsis">
+      DTBO: sysWORXX Pi HAT – Smart Metering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dtbo-sysworxx-pi-hat-industrial-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      DTBO: sysWORXX Pi HAT – Industrial Communication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../board-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Board Information
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boot-media-partitioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boot media and partitioning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Watchdog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test-code-highlighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test code highlighting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#digital-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Outputs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-outputs-sysworxx-ctr-600" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Outputs - sysWORXX CTR-600
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-outputs-sysworxx-ctr-800" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Outputs - sysWORXX CTR-800
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sysworxx-pi-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      sysWORXX Pi Outputs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Inputs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-inputs-sysworxx-ctr-600800" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Inputs - sysWORXX CTR-600/800
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-inputs-sysworxx-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Inputs - sysWORXX Pi
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ab-encoder-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      A/B Encoder / Counter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serial-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serial interfaces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rs-232" class="md-nav__link">
+    <span class="md-ellipsis">
+      RS-232
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rs-232-with-hardware-flow-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      RS-232 with hardware flow control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rs-485-with-den-gpio-mapped-to-rts" class="md-nav__link">
+    <span class="md-ellipsis">
+      RS-485 with DEN GPIO mapped to RTS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAN Bus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sysworxx-pi-40-pin-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      sysWORXX Pi 40 Pin Header
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-tree-overlay-dtbo-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Tree Overlay (DTBO) setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device Tree Overlay (DTBO) setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dtbo-gpio-via-40-pin-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      DTBO: GPIO via 40 Pin Header
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dtbo-sysworxx-pi-hat-smart-metering" class="md-nav__link">
+    <span class="md-ellipsis">
+      DTBO: sysWORXX Pi HAT – Smart Metering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dtbo-sysworxx-pi-hat-industrial-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      DTBO: sysWORXX Pi HAT – Industrial Communication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="using-peripherals">Using Peripherals<a class="headerlink" href="#using-peripherals" title="Permanent link">&para;</a></h1>
+<p>This section describes, how to access the GPIO in the Linux user space,
+<em>without</em> using the <code>sysworxx-io</code> library.</p>
+<p>Available inputs and outputs may vary from device to device. To get some insight
+into Pins and their use the following command.</p>
+<div class="highlight"><pre><span></span><code>gpioinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+</code></pre></div>
+<h2 id="digital-outputs">Digital Outputs<a class="headerlink" href="#digital-outputs" title="Permanent link">&para;</a></h2>
+<p>Some devices provide digital outputs via PWM. When setting the duty cycle of PWM
+output to 100% this is equivalent to setting the output active.</p>
+<h2 id="digital-outputs-sysworxx-ctr-600">Digital Outputs - sysWORXX CTR-600<a class="headerlink" href="#digital-outputs-sysworxx-ctr-600" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_0</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_0</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_1</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_1</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_RUN</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_RUN</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_ERR</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_ERR</span><span class="o">=</span><span class="m">0</span>
+
+<span class="c1"># DO_2_PWM</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip0/export
+<span class="nb">echo</span><span class="w"> </span><span class="m">400000000</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip0/pwm0/period
+<span class="nb">echo</span><span class="w"> </span><span class="m">300000000</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip0/pwm0/duty_cycle
+<span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip0/pwm0/enable
+
+<span class="c1"># DO_3_PWM</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip2/export
+<span class="nb">echo</span><span class="w"> </span><span class="m">400000000</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip2/pwm0/period
+<span class="nb">echo</span><span class="w"> </span><span class="m">100000000</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip2/pwm0/duty_cycle
+<span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip2/pwm0/enable
+</code></pre></div>
+<h2 id="digital-outputs-sysworxx-ctr-800">Digital Outputs - sysWORXX CTR-800<a class="headerlink" href="#digital-outputs-sysworxx-ctr-800" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_0</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_0</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_1</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_1</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_2</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_2</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_3</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_3</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_4</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_4</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_5</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_5</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_6</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_6</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_7</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_7</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_8</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_8</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_9</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_9</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_10</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_10</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_11</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_11</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_12</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_12</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_13</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_13</span><span class="o">=</span><span class="m">0</span>
+
+<span class="c1"># DO_14_PWM</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip0/export
+<span class="nb">echo</span><span class="w"> </span><span class="m">400000000</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip0/pwm0/period
+<span class="nb">echo</span><span class="w"> </span><span class="m">300000000</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip0/pwm0/duty_cycle
+<span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip0/pwm0/enable
+
+<span class="c1"># DO_15_PWM</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip2/export
+<span class="nb">echo</span><span class="w"> </span><span class="m">400000000</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip2/pwm0/period
+<span class="nb">echo</span><span class="w"> </span><span class="m">100000000</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip2/pwm0/duty_cycle
+<span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/pwm/pwmchip2/pwm0/enable
+
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">RELAY0_EN</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">RELAY0_EN</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">RELAY1_EN</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">RELAY1_EN</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_RUN</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_RUN</span><span class="o">=</span><span class="m">0</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_ERR</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_ERR</span><span class="o">=</span><span class="m">0</span>
+</code></pre></div>
+<h2 id="sysworxx-pi-outputs">sysWORXX Pi Outputs<a class="headerlink" href="#sysworxx-pi-outputs" title="Permanent link">&para;</a></h2>
+<p>sysWORXX Pi by default only has RGB LED outputs. Via device tree overlays (DTBO)
+more can be configured. See <a href="#device-tree-overlay-dtbo-setup"></a>.</p>
+<div class="highlight"><pre><span></span><code>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_RD</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">LED_GN</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">LED_BL</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="c1"># red</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_RD</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">LED_GN</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">LED_BL</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="c1"># green</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_RD</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">LED_GN</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">LED_BL</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="c1"># blue</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">LED_RD</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">LED_GN</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">LED_BL</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="c1"># off</span>
+</code></pre></div>
+<h2 id="digital-inputs">Digital Inputs<a class="headerlink" href="#digital-inputs" title="Permanent link">&para;</a></h2>
+<p>Most digital inputs are mapped to a <code>gpio-keys</code> device which means they are
+available as regular input device. State changes of inputs can be observed with
+<code>evtest</code>.</p>
+<p>However this does not make sense for all kinds of inputs. Some are still
+available via GPIO character interface.</p>
+<div class="highlight"><pre><span></span><code>gpioinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+</code></pre></div>
+<h2 id="digital-inputs-sysworxx-ctr-600800">Digital Inputs - sysWORXX CTR-600/800<a class="headerlink" href="#digital-inputs-sysworxx-ctr-600800" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># DI0 .. DI15 == KEY_F1 .. KEY_F16</span>
+<span class="c1"># RUN switch == KEY_1</span>
+evtest<span class="w"> </span>/dev/input/by-path/platform-gpio_input-event
+
+<span class="c1"># /BOOT and /CONFIG</span>
+gpioget<span class="w"> </span><span class="s2">&quot;/BOOT&quot;</span><span class="w"> </span><span class="s2">&quot;/CONFIG&quot;</span>
+</code></pre></div>
+<h2 id="digital-inputs-sysworxx-pi">Digital Inputs - sysWORXX Pi<a class="headerlink" href="#digital-inputs-sysworxx-pi" title="Permanent link">&para;</a></h2>
+<p>sysWORXX Pi by default only has no inputs. Via device tree overlays (DTB)
+more can be configured. See <code>dtbo-setup</code>.</p>
+<h2 id="ab-encoder-counter">A/B Encoder / Counter<a class="headerlink" href="#ab-encoder-counter" title="Permanent link">&para;</a></h2>
+<p>On CTR-600 and CTR-800 one A/B Encoder / Counter is available. This functionality
+is available in parallel to <em>Digital Input</em> functionality.</p>
+<p>Connection:</p>
+<ul>
+<li>CTR-600: <code>DI_2 / DI_3</code></li>
+<li>CTR-800: <code>DI_14 / DI_15</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/sys/bus/counter/devices/counter0/count0
+
+<span class="c1"># A/B Encoder</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nb">enable</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;quadrature x4&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="k">function</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nb">enable</span>
+<span class="k">while</span><span class="w"> </span>true<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>cat<span class="w"> </span>count<span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+
+<span class="c1"># Counter (counts pulses on first DI channel, second DI channel switches direction)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nb">enable</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;pulse-direction&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="k">function</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nb">enable</span>
+<span class="k">while</span><span class="w"> </span>true<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>cat<span class="w"> </span>count<span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</code></pre></div>
+<h2 id="serial-interfaces">Serial interfaces<a class="headerlink" href="#serial-interfaces" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>ttyS4</code> is <code>SERIAL0</code> on CTR-800</li>
+<li><code>ttyS5</code> is <code>SERIAL1</code> on CTR-800</li>
+<li><code>ttyS6</code> is <code>SERIAL2</code> on CTR-800</li>
+</ul>
+<h2 id="rs-232">RS-232<a class="headerlink" href="#rs-232" title="Permanent link">&para;</a></h2>
+<p>Setup:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># on PC</span>
+stty<span class="w"> </span>-F<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-echo<span class="w"> </span>raw
+date<span class="w"> </span>&gt;<span class="w"> </span>/dev/ttyUSB0
+cat<span class="w"> </span>/dev/ttyUSB0
+<span class="c1"># on sysWORXX device</span>
+stty<span class="w"> </span>-F<span class="w"> </span>/dev/ttyS4<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-echo<span class="w"> </span>raw
+cat<span class="w"> </span>/dev/ttyS4
+date<span class="w"> </span>&gt;<span class="w"> </span>/dev/ttyS4
+</code></pre></div>
+<h2 id="rs-232-with-hardware-flow-control">RS-232 with hardware flow control<a class="headerlink" href="#rs-232-with-hardware-flow-control" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># on PC</span>
+stty<span class="w"> </span>-F<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-echo<span class="w"> </span>raw<span class="w"> </span>crtscts
+date<span class="w"> </span>&gt;<span class="w"> </span>/dev/ttyUSB0
+<span class="c1"># on sysWORXX device</span>
+stty<span class="w"> </span>-F<span class="w"> </span>/dev/ttyS6<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-echo<span class="w"> </span>raw<span class="w"> </span>crtscts
+cat<span class="w"> </span>&gt;<span class="w"> </span>/dev/ttyS6
+<span class="c1"># expected behavior:</span>
+<span class="c1"># - sending data will block until other side has `cat` running</span>
+<span class="c1"># - if `cat` is already running the send command will not block</span>
+</code></pre></div>
+<h2 id="rs-485-with-den-gpio-mapped-to-rts">RS-485 with DEN GPIO mapped to RTS<a class="headerlink" href="#rs-485-with-den-gpio-mapped-to-rts" title="Permanent link">&para;</a></h2>
+<p>This requires Driver Enable (DEN) mapped to RTS,
+e.g. <code>rts-gpios = &lt;&amp;main_gpio0 63 GPIO_ACTIVE_HIGH&gt;;</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># on sysWORXX device</span>
+/usr/bin/rs485<span class="w"> </span>/dev/ttyS6
+stty<span class="w"> </span>-F<span class="w"> </span>/dev/ttyS6<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-echo<span class="w"> </span>raw
+cat<span class="w"> </span>/dev/ttyS6
+date<span class="w"> </span>&gt;<span class="w"> </span>/dev/ttyS6
+<span class="c1"># on PC</span>
+stty<span class="w"> </span>-F<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-echo<span class="w"> </span>raw
+date<span class="w"> </span>&gt;<span class="w"> </span>/dev/ttyUSB0
+cat<span class="w"> </span>&gt;<span class="w"> </span>/dev/ttyUSB0
+</code></pre></div>
+<h2 id="can-bus">CAN Bus<a class="headerlink" href="#can-bus" title="Permanent link">&para;</a></h2>
+<p>Example setup of CAN Bus interface:</p>
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>can0<span class="w"> </span><span class="nb">type</span><span class="w"> </span>can<span class="w"> </span>bitrate<span class="w"> </span><span class="m">500000</span>
+ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>can0<span class="w"> </span>up
+</code></pre></div>
+<p>Use <code>cansend</code> / <code>candump</code> to send and receive CAN messages.</p>
+<h2 id="sysworxx-pi-40-pin-header">sysWORXX Pi 40 Pin Header<a class="headerlink" href="#sysworxx-pi-40-pin-header" title="Permanent link">&para;</a></h2>
+<p>All pins of the 40 Pin Header are unused by default. To allow adding
+functionality to these pins without replacing the whole root file system
+device tree overlays can be used.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Function</th>
+<th style="text-align: center;">Pin</th>
+<th style="text-align: center;">Pin</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">3V3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">5V0</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO1_23 (I2C3 SCA)</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">5V0</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO1_22 (I2C3 SCL)</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">GND</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO0_0</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">GPIO0_72 (UART4_TX)</td>
+</tr>
+<tr>
+<td style="text-align: right;">GND</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">GPIO0_71 (UART4_RX)</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO0_1</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">GPIO0_35 (MCASP1_ACLKX)</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO0_2</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">GND</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO0_3</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;">MCU_GPIO0_13 (MCU_MCAN0_TX)</td>
+</tr>
+<tr>
+<td style="text-align: right;">3V3</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">MCU_GPIO0_14 (MCU_MCAN0_RX)</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO0_9 (SPI1_D0)</td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">GND</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO0_10 (SPI1_D1)</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: left;">GPIO0_40</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO0_8 (SPI1_CLK)</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">GPIO0_7 (SPI1_CS0)</td>
+</tr>
+<tr>
+<td style="text-align: right;">GND</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">26</td>
+<td style="text-align: left;">GPIO0_13 (SPI1_CS1)</td>
+</tr>
+<tr>
+<td style="text-align: right;">I2C2_SDA (GPIO0_44)</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: left;">I2C2_SCL (GPIO0_43)</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO1_24 (MCAN0_TX)</td>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">GND</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO1_25 (MCAN0_RX)</td>
+<td style="text-align: center;">31</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: left;">GPIO1_9 (PWM1)</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO1_28 (PWM2)</td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;">34</td>
+<td style="text-align: left;">GND</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO0_37 (MCASP1_AFSX)</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: left;">GPIO0_41</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPIO0_4</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">38</td>
+<td style="text-align: left;">GPIO0_34 (MCASP1_AXR0)</td>
+</tr>
+<tr>
+<td style="text-align: right;">GND</td>
+<td style="text-align: center;">39</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: left;">GPIO0_33 (MCASP1_AXR1)</td>
+</tr>
+</tbody>
+</table>
+<p>Functions in parentheses are usable as alternative.</p>
+<h2 id="device-tree-overlay-dtbo-setup">Device Tree Overlay (DTBO) setup<a class="headerlink" href="#device-tree-overlay-dtbo-setup" title="Permanent link">&para;</a></h2>
+<p>The script <code>dtbo-setup</code> is provided to simplify DTBO configuration. Examples:</p>
+<div class="highlight"><pre><span></span><code>dtbo-setup<span class="w"> </span>--help
+dtbo-setup<span class="w"> </span>ls
+dtbo-setup<span class="w"> </span><span class="nb">set</span><span class="w"> </span>k3-am625-systec-pi-sysworxx-io-default.dtbo
+dtbo-setup<span class="w"> </span>get
+</code></pre></div>
+<p>Applying device tree overlays is performed by the <em>u-boot</em> bootloader. The DTBO
+configuration is saved in <em>u-boot environment</em>. Therefore a <code>reboot</code> is needed to
+apply the new device tree overlay setting.</p>
+<p>The environment lives in the second partition (<code>mmcblk#p2</code>) on the respective boot device.
+This partition is mounted and the environment is available under:
+<code>/boot/u-boot/uboot.env</code></p>
+<h3 id="dtbo-gpio-via-40-pin-header">DTBO: GPIO via 40 Pin Header<a class="headerlink" href="#dtbo-gpio-via-40-pin-header" title="Permanent link">&para;</a></h3>
+<p>Enable with: <code>dtbo-setup set k3-am625-systec-pi-sysworxx-io-default.dtbo</code></p>
+<p>This will enable:</p>
+<ul>
+<li>SPI1 with CS0</li>
+<li>UART4</li>
+<li>I2C3</li>
+<li>GPIOs as described below</li>
+</ul>
+<p>Outputs:</p>
+<div class="highlight"><pre><span></span><code>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_0</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_0</span><span class="o">=</span><span class="m">0</span><span class="w">  </span><span class="c1"># GPIO0_1</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_1</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_1</span><span class="o">=</span><span class="m">0</span><span class="w">  </span><span class="c1"># GPIO0_35</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_2</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_2</span><span class="o">=</span><span class="m">0</span><span class="w">  </span><span class="c1"># GPIO0_3</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_3</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_3</span><span class="o">=</span><span class="m">0</span><span class="w">  </span><span class="c1"># MCU_GPIO0_13</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_4</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_4</span><span class="o">=</span><span class="m">0</span><span class="w">  </span><span class="c1"># GPIO0_40</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_5</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_5</span><span class="o">=</span><span class="m">0</span><span class="w">  </span><span class="c1"># GPIO0_41</span>
+gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_6</span><span class="o">=</span><span class="m">1</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.2<span class="p">;</span><span class="w"> </span>gpioset<span class="w"> </span>-t0<span class="w"> </span><span class="nv">DO_6</span><span class="o">=</span><span class="m">0</span><span class="w">  </span><span class="c1"># GPIO0_4</span>
+</code></pre></div>
+<p>Inputs:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># DI_0 == GPIO0_0  == BTN_TRIGGER_HAPPY1</span>
+<span class="c1"># DI_1 == GPIO0_2  == BTN_TRIGGER_HAPPY2</span>
+<span class="c1"># DI_2 == MCU_GPIO0_14  == BTN_TRIGGER_HAPPY3</span>
+<span class="c1"># DI_3 == GPIO0_13 == BTN_TRIGGER_HAPPY4</span>
+<span class="c1"># DI_4 == GPIO0_44 == BTN_TRIGGER_HAPPY5</span>
+<span class="c1"># DI_5 == GPIO0_43 == BTN_TRIGGER_HAPPY6</span>
+<span class="c1"># DI_6 == GPIO1_24 == BTN_TRIGGER_HAPPY7</span>
+<span class="c1"># DI_7 == GPIO1_25 == BTN_TRIGGER_HAPPY8</span>
+<span class="c1"># DI_8 == GPIO1_9  == BTN_TRIGGER_HAPPY9</span>
+<span class="c1"># DI_9 == GPIO1_28 == BTN_TRIGGER_HAPPY10</span>
+<span class="c1"># DI_10 == GPIO0_37 == BTN_TRIGGER_HAPPY11</span>
+<span class="c1"># DI_11 == GPIO0_34 == BTN_TRIGGER_HAPPY12</span>
+<span class="c1"># DI_12 == GPIO0_33 == BTN_TRIGGER_HAPPY13</span>
+evtest<span class="w"> </span>/dev/input/by-path/platform-sysworxx-0-io-inputs-event-joystick
+</code></pre></div>
+<h3 id="dtbo-sysworxx-pi-hat-smart-metering">DTBO: sysWORXX Pi HAT – Smart Metering<a class="headerlink" href="#dtbo-sysworxx-pi-hat-smart-metering" title="Permanent link">&para;</a></h3>
+<ul>
+<li>RS-485/Modbus RTU: <code>/dev/ttyS4</code></li>
+<li>M-Bus: <code>/dev/ttyS6</code></li>
+<li>S0 input: <code>/dev/input/by-path/platform-sysworxx-1-smart-metering-hat-inputs-event</code></li>
+</ul>
+<h3 id="dtbo-sysworxx-pi-hat-industrial-communication">DTBO: sysWORXX Pi HAT – Industrial Communication<a class="headerlink" href="#dtbo-sysworxx-pi-hat-industrial-communication" title="Permanent link">&para;</a></h3>
+<ul>
+<li>NetX SPI interface: <code>/dev/spidev1.0</code></li>
+<li>NetX GPIO character device: <code>industrial-communication-hat-gp</code></li>
+<li>CAN-Bus SocketCAN interface: <code>can0</code></li>
+<li>CAN LED: <code>/sys/class/leds/mcan0_act</code></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 SYS TEC electronic
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://systec-electronic.github.io/" target="_blank" rel="noopener" title="systec-electronic.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/sys_tec_AG" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/sys-tec-electronic-gmbh" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>
