@@ -29,7 +29,6 @@ nav:
   - 'Boot media and partitioning': boot-media-partitioning.md
   - 'Watchdog': watchdog.md
   - 'Networking': networking.md
-  - 'Test code highlighting': test-code-highlighting.md
 
 theme:
   name: 'material'
